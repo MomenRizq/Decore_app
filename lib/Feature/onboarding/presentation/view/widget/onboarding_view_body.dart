@@ -6,6 +6,8 @@ import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../auth/signup_view.dart';
+
 class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});
 
@@ -63,7 +65,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
               CustomButton(
                 text: currentPage == 3 ? 'Get Started' : 'Next',
                 onPressed: () {
-                  currentPage == 3 ? Navigator.of(context).pushNamed(SigninView.routeName) :
+                  currentPage == 3 ? Navigator.of(context).pushReplacementNamed(SignupView.routeName) :
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,

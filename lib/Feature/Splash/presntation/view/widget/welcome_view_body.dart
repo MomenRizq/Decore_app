@@ -14,7 +14,7 @@ class WelcomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.isDarkMode ? AppTheme.secondaryColorDark : Colors.white ,
+      color: AppTheme.isDarkMode ? AppTheme.secondaryColorDark : Colors.white,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +29,7 @@ class WelcomeViewBody extends StatelessWidget {
                 child: CustomImage(
                   height: 45,
                   width: 175,
-                  imagePath:  Assets.imgHOMEW,
+                  imagePath: Assets.imgHOMEW,
                 )),
             CustomImage(
               height: 41,
@@ -43,11 +43,12 @@ class WelcomeViewBody extends StatelessWidget {
             SizedBox(height: 25),
             CustomButton(
                 text: 'Let\'s Go',
+                
                 onPressed: () {
-                  Navigator.of(context).pushNamed(OnboardingView.routeName);
-                  print('Button Pressed');
-                },
-                textStyle: TextStyles.poppinsSemiBold),
+                  Navigator.of(context)
+                      .pushReplacementNamed(OnboardingView.routeName);
+            
+                },),
           ],
         ),
       ),

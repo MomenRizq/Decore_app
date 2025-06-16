@@ -22,7 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
     Timer(const Duration(milliseconds: 2000), () {
       setState(() {
-         Navigator.of(context).pushNamed(WelcomeView.routeName);
+         Navigator.of(context).pushReplacementNamed(WelcomeView.routeName);
       });
     });
 

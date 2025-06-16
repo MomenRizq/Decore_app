@@ -1,6 +1,6 @@
-import 'package:decore_app/Feature/auth/signup_view.dart';
 import 'package:decore_app/Feature/auth/widget/have_account_widget.dart';
 import 'package:decore_app/Feature/auth/widget/social_login_button.dart';
+import 'package:decore_app/Feature/auth/widget/terms_and_condition.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_text_auth.dart';
@@ -8,20 +8,23 @@ import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/widgets/custom_text_field.dart';
+import '../signin_view.dart';
 import 'custom_password_field.dart';
 import 'or_divider.dart';
 
-class SigninViewBody extends StatefulWidget {
-  const SigninViewBody({super.key});
+class SignupViewBody extends StatefulWidget {
+  const SignupViewBody({super.key});
 
   @override
-  State<SigninViewBody> createState() => _SigninViewBodyState();
+  State<SignupViewBody> createState() => _SignupViewBodyState();
 }
 
-class _SigninViewBodyState extends State<SigninViewBody> {
+class _SignupViewBodyState extends State<SignupViewBody> {
   final formKey = GlobalKey<FormState>();
 
-  late String email, password;
+  late String email, password, fullName , birthDate;
+  late int number; 
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +35,19 @@ class _SigninViewBodyState extends State<SigninViewBody> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomTextAuth(
-              title: "Welcome",
-              subTitle: "Please enter your details to proceed.",
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             Form(
                 key: formKey,
                 child: Column(
+                  spacing: MediaQuery.of(context).size.height * 0.02,
                   children: [
+                    CustomTextFormField(
+                      title: "Full Name",
+                      onSaved: (value) {
+                        fullName = value!;
+                      },
+                      hintText: "Momen Mohamed Rizq",
+                      textInputType: TextInputType.name,
+                    ),
                     CustomTextFormField(
                       title: "Email",
                       onSaved: (value) {
@@ -49,26 +56,45 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                       hintText: "example@example.com",
                       textInputType: TextInputType.emailAddress,
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    CustomTextFormField(
+                      title: "Mobile Number",
+                      onSaved: (value) {
+                        number = int.parse(value!);
+                      },
+                      hintText: "0123456789",
+                      textInputType: TextInputType.phone,
+                    ),
+                    CustomTextFormField(
+                      title: "Birth Date",
+                      onSaved: (value) {
+                       birthDate = value!;
+                      },
+                      hintText: "20/01/2002",
+                      textInputType: TextInputType.datetime,
+                    ),
                     PasswordField(
                       title: "Password",
                       onSaved: (value) {
                         password = value!;
                       },
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-                    CustomButton(
-                      text: 'Login',
-                      onPressed: () {},
+                     PasswordField(
+                      title: "Confirm Password",
+                      onSaved: (value) {
+                        password = value!;
+                      },
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    TermsAndConditionsWidget(),
+                    CustomButton(
+                      text: 'Sign Up',
+                      onPressed: () {},
+                    ),
                     Text(
                       "Forgot Password?",
                       style: TextStyles.spartanSemiBold15,
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     OrDivider(),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -79,12 +105,11 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                             image: Assets.imgGoogle_Icon, onPressed: () {})
                       ],
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     HaveAnAccountWidget(
-                        firstWord: "Don't have an account?",
-                        secondWord: "Sign Up",
+                        firstWord: "Already have an account?",
+                        secondWord: "Sign In",
                         onTap: () {
-                         Navigator.pop(context);
+                          Navigator.of(context).pushNamed(SigninView.routeName);
                         }),
                   ],
                 )),

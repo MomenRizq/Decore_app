@@ -10,13 +10,16 @@ class CustomTextFormField extends StatelessWidget {
       required this.textInputType,
       this.suffixIcon,
       this.onSaved,
-      this.obscureText = false, required this.title});
+      this.obscureText = false,
+      required this.title,
+      this.readonly = false});
   final String hintText;
   final TextInputType textInputType;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
   final bool obscureText;
   final String title;
+  final bool readonly;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,6 +31,7 @@ class CustomTextFormField extends StatelessWidget {
           style: TextStyles.spartanSemiBold15,
         ),
         TextFormField(
+          readOnly: readonly,
           obscureText: obscureText,
           onSaved: onSaved,
           validator: (value) {
@@ -39,7 +43,9 @@ class CustomTextFormField extends StatelessWidget {
           keyboardType: textInputType,
           decoration: InputDecoration(
             suffixIcon: suffixIcon,
-            hintStyle: TextStyles.spartanRegular,
+            hintStyle: TextStyles.spartanRegular.copyWith(
+              color: Colors.grey.shade400,
+            ),
             hintText: hintText,
             filled: true,
             fillColor: const Color(0xFFFAF0E6),
@@ -51,10 +57,10 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder  buildBorder() {
+  OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(25),
-       borderSide: BorderSide.none,
+      borderSide: BorderSide.none,
     );
   }
 }

@@ -5,10 +5,11 @@ import '../../../core/widgets/custom_text_field.dart';
 class PasswordField extends StatefulWidget {
   const PasswordField({
     super.key,
-    this.onSaved,
+    this.onSaved, required this.title,
   });
 
   final void Function(String?)? onSaved;
+  final String title ; 
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -19,7 +20,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      title: "password",
+      title: widget.title,
       obscureText: obscureText,
       onSaved: widget.onSaved,
       suffixIcon: GestureDetector(
@@ -37,7 +38,7 @@ class _PasswordFieldState extends State<PasswordField> {
                 color: Color(0xffC9CECF),
               ),
       ),
-      hintText: 'كلمة المرور',
+      hintText: '● ● ● ● ● ● ● ● ● ● ●',
       textInputType: TextInputType.visiblePassword,
     );
   }
