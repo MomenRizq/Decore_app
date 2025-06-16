@@ -10,13 +10,12 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     primaryColor: primaryColor,
+    scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: primaryColor,
-      brightness: Brightness.light,
-    ),
+      seedColor: Colors.white,    ),
     appBarTheme: const AppBarTheme(
       centerTitle: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
     ),
   );
 }

@@ -39,7 +39,13 @@ abstract class TextStyles {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle spartanSemiBold = TextStyle(
+  static const TextStyle spartanSemiBold15 = TextStyle(
+    fontFamily: 'League Spartan',
+    fontWeight: FontWeight.w600,
+    fontSize: 15
+  );
+
+   static const TextStyle spartanSemiBold = TextStyle(
     fontFamily: 'League Spartan',
     fontWeight: FontWeight.w600,
   );

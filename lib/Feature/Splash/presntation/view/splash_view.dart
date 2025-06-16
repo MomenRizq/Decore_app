@@ -1,8 +1,4 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-
-import '../../../../core/utils/app_theme.dart';
-import '../../../home_screen.dart';
 import 'widget/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {

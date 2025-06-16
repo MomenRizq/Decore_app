@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:decore_app/Feature/Splash/presntation/view/welcome_view.dart';
 import 'package:decore_app/Feature/Splash/presntation/view/widget/custom_img.dart';
+import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../home_screen.dart';
 
 
 class SplashViewBody extends StatefulWidget {
@@ -49,7 +48,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
                 CustomImage(
                   height: 148,
                   width: 175,
-                  imagePath: 'assets/img/Vector.png',
+                  imagePath: Assets.imgVector,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),

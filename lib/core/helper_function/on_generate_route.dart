@@ -1,5 +1,6 @@
 
 import 'package:decore_app/Feature/Splash/presntation/view/welcome_view.dart';
+import 'package:decore_app/Feature/auth/signin_view.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,8 @@ switch (settings.name) {
     return MaterialPageRoute(builder: (_) => const WelcomeView());
   case OnboardingView.routeName:
     return MaterialPageRoute(builder: (_) => const OnboardingView());
+  case SigninView.routeName:
+    return MaterialPageRoute(builder: (_) => const SigninView());
 
   default:
     return MaterialPageRoute(builder: (_) => const Scaffold());

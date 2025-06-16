@@ -93,3 +93,10 @@ flutter:
         - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Medium.ttf
         - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Light.ttf
         - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Thin.ttf
+
+
+flutter_assets:
+  assets_path: assets\img
+  output_path: lib\core\utils
+  filename: app_images.dart
+  field_prefix: null

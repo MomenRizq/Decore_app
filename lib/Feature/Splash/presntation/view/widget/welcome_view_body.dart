@@ -1,3 +1,4 @@
+import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/widgets/custom_container_Text.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/onboarding_view.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
@@ -21,19 +22,19 @@ class WelcomeViewBody extends StatelessWidget {
             CustomImage(
               height: 148,
               width: 175,
-              imagePath: 'assets/img/VectorW.png',
+              imagePath: Assets.imgVectorW,
             ),
             Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: CustomImage(
                   height: 45,
                   width: 175,
-                  imagePath: 'assets/img/HOMEW.png',
+                  imagePath:  Assets.imgHOMEW,
                 )),
             CustomImage(
               height: 41,
               width: 170,
-              imagePath: 'assets/img/DECORW.png',
+              imagePath: Assets.imgDECORW,
             ),
             SizedBox(height: 25),
             CustomContainerText(
