@@ -1,6 +1,8 @@
+import 'package:decore_app/Feature/Splash/presntation/view/splash_view.dart';
 import 'package:flutter/material.dart';
-import 'screens/auth/login_screen.dart';
-import 'theme/app_theme.dart';
+import 'Feature/auth/login_screen.dart';
+import 'core/helper_function/on_generate_route.dart';
+import 'core/utils/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'DeCore App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const LoginScreen(), // Changed to LoginScreen
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: SplashView.routeName, // Changed to SplashView
     );
   }
 }
