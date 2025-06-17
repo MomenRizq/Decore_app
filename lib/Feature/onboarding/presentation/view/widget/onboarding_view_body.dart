@@ -1,6 +1,4 @@
-import 'package:decore_app/Feature/auth/signin_view.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/widget/onboarding_page_view.dart';
-import 'package:decore_app/Feature/onboarding/presentation/view/widget/page_view_item.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:dots_indicator/dots_indicator.dart';

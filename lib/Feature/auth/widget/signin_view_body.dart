@@ -1,4 +1,3 @@
-import 'package:decore_app/Feature/auth/signup_view.dart';
 import 'package:decore_app/Feature/auth/widget/have_account_widget.dart';
 import 'package:decore_app/Feature/auth/widget/social_login_button.dart';
 import 'package:decore_app/core/utils/app_images.dart';

@@ -1,7 +1,6 @@
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/widgets/custom_container_Text.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/onboarding_view.dart';
-import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';

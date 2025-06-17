@@ -3,7 +3,6 @@ import 'package:decore_app/Feature/auth/widget/social_login_button.dart';
 import 'package:decore_app/Feature/auth/widget/terms_and_condition.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
-import 'package:decore_app/core/widgets/custom_text_auth.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 

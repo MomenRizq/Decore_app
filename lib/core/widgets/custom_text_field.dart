@@ -1,5 +1,4 @@
 import 'package:decore_app/core/utils/app_text_style.dart';
-import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,7 +11,8 @@ class CustomTextFormField extends StatelessWidget {
       this.onSaved,
       this.obscureText = false,
       required this.title,
-      this.readonly = false});
+      this.readonly = false,
+      this.color = const Color(0xFFFAF0E6)});
   final String hintText;
   final TextInputType textInputType;
   final Widget? suffixIcon;
@@ -20,6 +20,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final String title;
   final bool readonly;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
             hintText: hintText,
             filled: true,
-            fillColor: const Color(0xFFFAF0E6),
+            fillColor: color,
             border: buildBorder(),
             enabledBorder: buildBorder(),
           ),

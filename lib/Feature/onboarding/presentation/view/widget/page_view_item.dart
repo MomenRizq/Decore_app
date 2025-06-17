@@ -1,10 +1,6 @@
-import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:decore_app/core/widgets/custom_container_Text.dart';
 import 'package:decore_app/core/widgets/custom_header_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../../core/utils/app_text_style.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({super.key, required this.image, this.isvisible = true, required this.title, required this.subTitle});
