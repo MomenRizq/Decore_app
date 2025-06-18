@@ -1,6 +1,6 @@
+import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/custom_text_field.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({

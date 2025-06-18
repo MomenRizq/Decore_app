@@ -1,9 +1,7 @@
+import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/utils/app_text_style.dart';
-
 
 class HaveAnAccountWidget extends StatelessWidget {
   const HaveAnAccountWidget({

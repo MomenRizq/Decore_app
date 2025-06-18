@@ -1,11 +1,9 @@
+import 'package:decore_app/Feature/auth/view/signup_view.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/widget/onboarding_page_view.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../auth/signup_view.dart';
-
 class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});
 

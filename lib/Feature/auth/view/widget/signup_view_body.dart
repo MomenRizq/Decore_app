@@ -1,15 +1,14 @@
-import 'package:decore_app/Feature/auth/widget/have_account_widget.dart';
-import 'package:decore_app/Feature/auth/widget/social_login_button.dart';
-import 'package:decore_app/Feature/auth/widget/terms_and_condition.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
+import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/widgets/custom_text_field.dart';
 import '../signin_view.dart';
 import 'custom_password_field.dart';
+import 'have_account_widget.dart';
 import 'or_divider.dart';
+import 'social_login_button.dart';
+import 'terms_and_condition.dart';
 
 class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
@@ -98,10 +97,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SocialLoginButton(
-                            image: Assets.imgFacebook_Icon, onPressed: () {}),
+                            image: Assets.imgFacebookIcon, onPressed: () {}),
                         SizedBox(width: 8),
                         SocialLoginButton(
-                            image: Assets.imgGoogle_Icon, onPressed: () {})
+                            image: Assets.imgGoogleIcon, onPressed: () {})
                       ],
                     ),
                     HaveAnAccountWidget(

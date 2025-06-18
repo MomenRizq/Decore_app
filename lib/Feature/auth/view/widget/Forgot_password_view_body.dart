@@ -1,9 +1,8 @@
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:decore_app/core/widgets/custom_text_auth.dart';
+import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/widgets/custom_text_field.dart';
 
 class ForgotPasswprdViewBody extends StatelessWidget {
   const ForgotPasswprdViewBody({super.key});

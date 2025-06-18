@@ -2,6 +2,22 @@
 class Assets {
   Assets._();
   
+  /// Assets for imgAdd
+  /// assets/img/Add.svg
+  static const String imgAdd = "assets/img/Add.svg";
+
+  /// Assets for imgBedicon
+  /// assets/img/bedicon.svg
+  static const String imgBedicon = "assets/img/bedicon.svg";
+
+  /// Assets for imgBestseller
+  /// assets/img/bestseller.png
+  static const String imgBestseller = "assets/img/bestseller.png";
+
+  /// Assets for imgChairicon
+  /// assets/img/chairicon.svg
+  static const String imgChairicon = "assets/img/chairicon.svg";
+
   /// Assets for imgDECOR
   /// assets/img/DECOR.png
   static const String imgDECOR = "assets/img/DECOR.png";
@@ -10,13 +26,21 @@ class Assets {
   /// assets/img/DECORW.png
   static const String imgDECORW = "assets/img/DECORW.png";
 
-  /// Assets for imgFacebook Icon
-  /// assets/img/Facebook Icon.svg
-  static const String imgFacebook_Icon = "assets/img/FacebookIcon.svg";
+  /// Assets for imgDiningtableicon
+  /// assets/img/Diningtableicon.svg
+  static const String imgDiningtableicon = "assets/img/Diningtableicon.svg";
 
-  /// Assets for imgGoogle Icon
-  /// assets/img/Google Icon.svg
-  static const String imgGoogle_Icon = "assets/img/GoogleIcon.svg";
+  /// Assets for imgFacebookIcon
+  /// assets/img/FacebookIcon.svg
+  static const String imgFacebookIcon = "assets/img/FacebookIcon.svg";
+
+  /// Assets for imgFavorites
+  /// assets/img/Favorites.svg
+  static const String imgFavorites = "assets/img/Favorites.svg";
+
+  /// Assets for imgGoogleIcon
+  /// assets/img/GoogleIcon.svg
+  static const String imgGoogleIcon = "assets/img/GoogleIcon.svg";
 
   /// Assets for imgHOME
   /// assets/img/HOME.png
@@ -25,6 +49,10 @@ class Assets {
   /// Assets for imgHOMEW
   /// assets/img/HOMEW.png
   static const String imgHOMEW = "assets/img/HOMEW.png";
+
+  /// Assets for imgKitchenicon
+  /// assets/img/kitchenicon.svg
+  static const String imgKitchenicon = "assets/img/kitchenicon.svg";
 
   /// Assets for imgNotification
   /// assets/img/notification.svg
@@ -45,6 +73,18 @@ class Assets {
   /// Assets for imgOnboardin4
   /// assets/img/onboardin4.png
   static const String imgOnboardin4 = "assets/img/onboardin4.png";
+
+  /// Assets for imgPanner
+  /// assets/img/panner.png
+  static const String imgPanner = "assets/img/panner.png";
+
+  /// Assets for imgSearchIcon
+  /// assets/img/search_icon.svg
+  static const String imgSearchIcon = "assets/img/search_icon.svg";
+
+  /// Assets for imgSofaicon
+  /// assets/img/Sofaicon.svg
+  static const String imgSofaicon = "assets/img/Sofaicon.svg";
 
   /// Assets for imgVector
   /// assets/img/Vector.png

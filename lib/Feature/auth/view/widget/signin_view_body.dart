@@ -1,12 +1,13 @@
-import 'package:decore_app/Feature/auth/widget/have_account_widget.dart';
-import 'package:decore_app/Feature/auth/widget/social_login_button.dart';
+import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
+import 'package:decore_app/Feature/auth/view/widget/have_account_widget.dart';
+import 'package:decore_app/Feature/auth/view/widget/social_login_button.dart';
+import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_text_auth.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
+import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/widgets/custom_text_field.dart';
 import 'custom_password_field.dart';
 import 'or_divider.dart';
 
@@ -58,12 +59,15 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.06),
                     CustomButton(
                       text: 'Login',
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(context, HomeView.routeName),
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                    Text(
-                      "Forgot Password?",
-                      style: TextStyles.spartanSemiBold15,
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, ForgotPasswprdView.routeName),
+                      child: Text(
+                        "Forgot Password?",
+                        style: TextStyles.spartanSemiBold15,
+                      ),
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     OrDivider(),
@@ -72,10 +76,10 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SocialLoginButton(
-                            image: Assets.imgFacebook_Icon, onPressed: () {}),
+                            image: Assets.imgFacebookIcon, onPressed: () {}),
                         SizedBox(width: 8),
                         SocialLoginButton(
-                            image: Assets.imgGoogle_Icon, onPressed: () {})
+                            image: Assets.imgGoogleIcon, onPressed: () {})
                       ],
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.03),
