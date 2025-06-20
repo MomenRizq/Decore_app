@@ -14,6 +14,14 @@ class Assets {
   /// assets/img/bestseller.png
   static const String imgBestseller = "assets/img/bestseller.png";
 
+  /// Assets for imgCart
+  /// assets/img/Cart.svg
+  static const String imgCart = "assets/img/Cart.svg";
+
+  /// Assets for imgCategories
+  /// assets/img/Categories.svg
+  static const String imgCategories = "assets/img/Categories.svg";
+
   /// Assets for imgChairicon
   /// assets/img/chairicon.svg
   static const String imgChairicon = "assets/img/chairicon.svg";
@@ -50,6 +58,10 @@ class Assets {
   /// assets/img/HOMEW.png
   static const String imgHOMEW = "assets/img/HOMEW.png";
 
+  /// Assets for imgHome
+  /// assets/img/Home.svg
+  static const String imgHome = "assets/img/Home.svg";
+
   /// Assets for imgKitchenicon
   /// assets/img/kitchenicon.svg
   static const String imgKitchenicon = "assets/img/kitchenicon.svg";
@@ -78,6 +90,10 @@ class Assets {
   /// assets/img/panner.png
   static const String imgPanner = "assets/img/panner.png";
 
+  /// Assets for imgProfile
+  /// assets/img/Profile.svg
+  static const String imgProfile = "assets/img/Profile.svg";
+
   /// Assets for imgSearchIcon
   /// assets/img/search_icon.svg
   static const String imgSearchIcon = "assets/img/search_icon.svg";
@@ -93,5 +109,9 @@ class Assets {
   /// Assets for imgVectorW
   /// assets/img/VectorW.png
   static const String imgVectorW = "assets/img/VectorW.png";
+
+  /// Assets for imgWishlist
+  /// assets/img/Wishlist.svg
+  static const String imgWishlist = "assets/img/Wishlist.svg";
 }
 

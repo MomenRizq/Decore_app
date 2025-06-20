@@ -47,52 +47,58 @@ class NewCollectionItem extends StatelessWidget {
             height: 1,
             color: AppTheme.primaryColor,
           ),
-          SizedBox(height: 9),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "\$${120.00}",
-                style: TextStyles.poppinsSemiBold.copyWith(
-                  color: AppTheme.primaryColor,
+          SizedBox(height: 5),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "\$${120.00}",
+                  style: TextStyles.poppinsSemiBold.copyWith(
+                    color: AppTheme.primaryColor,
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Container(
-                    width: 20,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryColor,
-                      borderRadius: BorderRadius.circular(9),
-                    ),
-                    child: Center(
-                      child: CustomImageView(
-                        imagePath: Assets.imgFavorites,
-                        height: 14,
-                        width: 14,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 25,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: AppTheme.primaryColor,
+                          borderRadius: BorderRadius.circular(9),
+                        ),
+                        child: Center(
+                          child: CustomImageView(
+                            imagePath: Assets.imgFavorites,
+                            height: 15,
+                            width: 15,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  SizedBox(width: 5),
-                  Container(
-                    width: 20,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: CustomImageView(
-                        imagePath: Assets.imgAdd,
-                        height: 14,
-                        width: 14,
+                      SizedBox(width: 5),
+                      Container(
+                        width: 25,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: AppTheme.primaryColor,
+                          borderRadius: BorderRadius.circular(9),
+                        ),
+                        child: Center(
+                          child: CustomImageView(
+                            imagePath: Assets.imgAdd,
+                            height: 15,
+                            width: 15,
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
