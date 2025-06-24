@@ -4,26 +4,17 @@ import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class NewCollectionItem extends StatelessWidget {
-  const NewCollectionItem({super.key});
+class CategoriesDetailesItem extends StatelessWidget {
+  const CategoriesDetailesItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: AppTheme.secondaryColor,
-            blurRadius: 5,
-            offset: const Offset(0, 2), // changes position of shadow
-          ),
-        ],
-      ),
+      color: AppTheme.secondaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AspectRatio(
+                   AspectRatio(
             aspectRatio: 1.1,
             child: Container(
               decoration: BoxDecoration(

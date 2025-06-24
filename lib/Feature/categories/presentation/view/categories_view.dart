@@ -1,3 +1,4 @@
+import 'package:decore_app/Feature/categories/presentation/view/widget/categories_view_body.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesView extends StatelessWidget {
@@ -7,7 +8,7 @@ class CategoriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text("Categories")),
+      body: CategoriesViewBody(),
     );
   }
 }

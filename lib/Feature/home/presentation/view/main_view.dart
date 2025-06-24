@@ -2,6 +2,7 @@ import 'package:decore_app/Feature/home/presentation/view/widget/appbar_home_wid
 import 'package:decore_app/Feature/home/presentation/view/widget/home_view_body.dart';
 import 'package:decore_app/Feature/home/presentation/view/widget/custom_nav_bottom_bar/custom_bottom_nav_bar.dart';
 import 'package:decore_app/Feature/home/presentation/view/widget/main_view_body.dart';
+import 'package:decore_app/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class MainView extends StatefulWidget {
@@ -19,8 +20,11 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: MainViewBody(
-        currentViewIndex: currentViewIndex,
+      body: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: leftPadding, vertical: topPadding),
+        child: MainViewBody(
+          currentViewIndex: currentViewIndex,
+        ),
       ),
       bottomNavigationBar: CustomBottomNavBar(
         onItemTapped: (index) {

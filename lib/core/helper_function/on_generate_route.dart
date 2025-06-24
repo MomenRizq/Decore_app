@@ -2,6 +2,7 @@ import 'package:decore_app/Feature/Splash/presntation/view/welcome_view.dart';
 import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
 import 'package:decore_app/Feature/auth/view/signin_view.dart';
 import 'package:decore_app/Feature/auth/view/signup_view.dart';
+import 'package:decore_app/Feature/categories/presentation/view/widget/category_detiles_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/main_view.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/onboarding_view.dart';
@@ -25,7 +26,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case HomeView.routeName:
       return MaterialPageRoute(builder: (_) => const HomeView());
     case MainView.routeName:
-      return MaterialPageRoute(builder: (context) => const MainView());
+      return MaterialPageRoute(builder: (_) => const MainView());
+    case CategoryDetilesView.routeName:
+      return MaterialPageRoute(builder: (_) => const CategoryDetilesView());
 
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());
