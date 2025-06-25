@@ -9,7 +9,7 @@ class SigninView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context, title: "Log In" , ),
+      appBar: customAppBar(context, title: "Log In" , ),
       body: SafeArea(
         child: SigninViewBody()
       ),

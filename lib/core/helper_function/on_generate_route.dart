@@ -6,6 +6,7 @@ import 'package:decore_app/Feature/categories/presentation/view/widget/category_
 import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/main_view.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/onboarding_view.dart';
+import 'package:decore_app/Feature/item_details/presentation/views/details_of_item_view.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Splash/presntation/view/splash_view.dart';
 
@@ -29,6 +30,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const MainView());
     case CategoryDetilesView.routeName:
       return MaterialPageRoute(builder: (_) => const CategoryDetilesView());
+    case DetailsOfItemview.routeName:
+      return MaterialPageRoute(builder: (_) => const DetailsOfItemview());
 
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());

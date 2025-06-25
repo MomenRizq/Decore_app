@@ -10,7 +10,7 @@ class ForgotPasswprdView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context, title: "Forgot Password"),
+      appBar: customAppBar(context, title: "Forgot Password"),
       body: SafeArea(
         child: const ForgotPasswprdViewBody(),
       ),

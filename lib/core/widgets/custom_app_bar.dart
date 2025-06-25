@@ -3,7 +3,7 @@ import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
 
-AppBar CustomAppBar(context, {required String title}) {
+AppBar customAppBar(context, {required String title}) {
   return AppBar(
     backgroundColor: Colors.white,
     leading: GestureDetector(

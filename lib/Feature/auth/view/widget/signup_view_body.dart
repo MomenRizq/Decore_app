@@ -1,3 +1,5 @@
+import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
+import 'package:decore_app/Feature/home/presentation/view/main_view.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
@@ -20,9 +22,9 @@ class SignupViewBody extends StatefulWidget {
 class _SignupViewBodyState extends State<SignupViewBody> {
   final formKey = GlobalKey<FormState>();
 
-  late String email, password, fullName , birthDate;
-  late int number; 
-
+  late String email, password, fullName, birthDate;
+  late int number;
+  AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,8 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Form(
-                key: formKey,
+                key: formKey, 
+                autovalidateMode: _autovalidateMode,
                 child: Column(
                   spacing: MediaQuery.of(context).size.height * 0.02,
                   children: [
@@ -65,7 +68,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     CustomTextFormField(
                       title: "Birth Date",
                       onSaved: (value) {
-                       birthDate = value!;
+                        birthDate = value!;
                       },
                       hintText: "20/01/2002",
                       textInputType: TextInputType.datetime,
@@ -76,7 +79,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                         password = value!;
                       },
                     ),
-                     PasswordField(
+                    PasswordField(
                       title: "Confirm Password",
                       onSaved: (value) {
                         password = value!;
@@ -86,11 +89,25 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     TermsAndConditionsWidget(),
                     CustomButton(
                       text: 'Sign Up',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          formKey.currentState!.save();
+                          Navigator.of(context).pushNamed(MainView.routeName);
+                        } else {
+                          _autovalidateMode = AutovalidateMode.always;
+                          setState(() {});
+                        }
+                      },
                     ),
-                    Text(
-                      "Forgot Password?",
-                      style: TextStyles.spartanSemiBold15,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(ForgotPasswprdView.routeName);
+                      },
+                      child: Text(
+                        "Forgot Password?",
+                        style: TextStyles.spartanSemiBold15,
+                      ),
                     ),
                     OrDivider(),
                     Row(

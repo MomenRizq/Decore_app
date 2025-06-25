@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: MainView.routeName 
-      //SplashView.routeName, // Changed to SplashView
+      initialRoute:// MainView.routeName 
+      SplashView.routeName, // Changed to SplashView
     );
   }
 }

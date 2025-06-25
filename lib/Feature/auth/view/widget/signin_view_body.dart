@@ -1,13 +1,13 @@
 import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
 import 'package:decore_app/Feature/auth/view/widget/have_account_widget.dart';
 import 'package:decore_app/Feature/auth/view/widget/social_login_button.dart';
-import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_text_auth.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import '../../../home/presentation/view/main_view.dart';
 import 'custom_password_field.dart';
 import 'or_divider.dart';
 
@@ -20,6 +20,7 @@ class SigninViewBody extends StatefulWidget {
 
 class _SigninViewBodyState extends State<SigninViewBody> {
   final formKey = GlobalKey<FormState>();
+  AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
   late String email, password;
 
@@ -39,6 +40,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             Form(
                 key: formKey,
+                autovalidateMode: _autovalidateMode,
                 child: Column(
                   children: [
                     CustomTextFormField(
@@ -58,12 +60,20 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.06),
                     CustomButton(
-                      text: 'Login',
-                      onPressed: () => Navigator.pushNamed(context, HomeView.routeName),
-                    ),
+                        text: 'Login',
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+                            Navigator.of(context).pushNamed(MainView.routeName);
+                          } else {
+                            _autovalidateMode = AutovalidateMode.always;
+                            setState(() {});
+                          }
+                        }),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, ForgotPasswprdView.routeName),
+                      onTap: () => Navigator.pushNamed(
+                          context, ForgotPasswprdView.routeName),
                       child: Text(
                         "Forgot Password?",
                         style: TextStyles.spartanSemiBold15,
@@ -87,7 +97,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                         firstWord: "Don't have an account?",
                         secondWord: "Sign Up",
                         onTap: () {
-                         Navigator.pop(context);
+                          Navigator.pop(context);
                         }),
                   ],
                 )),
