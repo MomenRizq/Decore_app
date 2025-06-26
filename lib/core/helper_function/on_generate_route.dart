@@ -2,6 +2,10 @@ import 'package:decore_app/Feature/Splash/presntation/view/welcome_view.dart';
 import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
 import 'package:decore_app/Feature/auth/view/signin_view.dart';
 import 'package:decore_app/Feature/auth/view/signup_view.dart';
+import 'package:decore_app/Feature/cart/presentation/views/cart_view.dart';
+import 'package:decore_app/Feature/cart/presentation/views/widget/checkout_widgets/checkout_view.dart';
+import 'package:decore_app/Feature/cart/presentation/views/widget/state_order_view.dart';
+import 'package:decore_app/Feature/cart/presentation/views/widget/track_view.dart';
 import 'package:decore_app/Feature/categories/presentation/view/widget/category_detiles_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/main_view.dart';
@@ -32,6 +36,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const CategoryDetilesView());
     case DetailsOfItemview.routeName:
       return MaterialPageRoute(builder: (_) => const DetailsOfItemview());
+    case CartView.routeName:
+      return MaterialPageRoute(builder: (_) => const CartView());
+    case CheckoutView.routeName:
+      return MaterialPageRoute(builder: (_) => const CheckoutView());
+    case StateOrderView.routeName:
+      return MaterialPageRoute(builder: (_) => const StateOrderView());
+    case TrackView.routeName:
+      return MaterialPageRoute(builder: (_) => const TrackView());
 
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());

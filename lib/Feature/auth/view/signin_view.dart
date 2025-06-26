@@ -1,5 +1,5 @@
 import 'package:decore_app/Feature/auth/view/widget/signin_view_body.dart';
-import 'package:decore_app/core/widgets/custom_app_bar.dart';
+import 'package:decore_app/Feature/auth/view/widget/custom_app_bar_auth.dart';
 import 'package:flutter/material.dart';
 
 class SigninView extends StatelessWidget {
@@ -9,7 +9,7 @@ class SigninView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, title: "Log In" , ),
+      appBar: customAppBarAuth(context, title: "Log In" , ),
       body: SafeArea(
         child: SigninViewBody()
       ),

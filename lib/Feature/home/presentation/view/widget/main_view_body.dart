@@ -1,3 +1,4 @@
+import 'package:decore_app/Feature/cart/presentation/views/cart_view.dart';
 import 'package:decore_app/Feature/categories/presentation/view/categories_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MainViewBody extends StatelessWidget {
       children: const [
         HomeView(),
         CategoriesView(),
-        CategoriesView(),
+        CartView(),
         CategoriesView(),
         HomeView(),
         
