@@ -11,6 +11,7 @@ class CategoriesViewBody extends StatelessWidget {
       child: Column(
         children: const [
           CustomAppBar(title: 'Categories',),
+          SizedBox(height: 20),
           CustomCategoryGrid(),
         ],
       ),

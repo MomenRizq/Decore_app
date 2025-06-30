@@ -1,3 +1,4 @@
+import 'package:decore_app/Feature/home/presentation/view/main_view.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
@@ -42,7 +43,9 @@ class TrackView extends StatelessWidget {
             Spacer(flex: 1),
             CustomButton(
               text: "Go to Home",
-              onPressed: () {},
+              onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(context, MainView.routeName, (route) => false);
+                },
               color: AppTheme.secondaryColor,
               width: MediaQuery.of(context).size.width * 0.8,
               height: 40,

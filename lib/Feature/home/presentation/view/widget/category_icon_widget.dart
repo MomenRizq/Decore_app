@@ -1,4 +1,5 @@
-  import 'package:decore_app/core/utils/app_text_style.dart';
+  import 'package:decore_app/Feature/categories/presentation/view/widget/category_detiles_view.dart';
+import 'package:decore_app/core/utils/app_text_style.dart';
   import 'package:decore_app/core/utils/app_theme.dart';
   import 'package:flutter/material.dart';
   import 'package:flutter_svg/flutter_svg.dart';
@@ -50,20 +51,29 @@
                   physics: const BouncingScrollPhysics(),
                   itemCount: widget.CategoryIcon.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: Container(
-                        height: 65,
-                        width: 65,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: AppTheme.secondaryColor,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          CategoryDetilesView.routeName,
+                          arguments: widget.CategoryIcon[index],
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: Container(
+                          height: 65,
+                          width: 65,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: AppTheme.secondaryColor,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: SvgPicture.asset(widget.CategoryIcon[index],),
+                          )
+                              
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: SvgPicture.asset(widget.CategoryIcon[index],),
-                        )
-                            
                       ),
                     );
                   },
