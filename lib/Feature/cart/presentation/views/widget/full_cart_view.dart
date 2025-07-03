@@ -15,61 +15,59 @@ class FullCartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CartItemWidget(
-          imagepath: Assets.imgOnboardin1, // أو 'assets/images/product.png'
-          title: 'Bedroom Dresser',
-          price: 85,
-          quantity: 2,
-          onAdd: () {},
-          onRemove: () {},
-        ),
-        CartItemWidget(
-          imagepath: Assets.imgOnboardin1, // أو 'assets/images/product.png'
-          title: 'Bedroom Dresser',
-          price: 85,
-          quantity: 2,
-          onAdd: () {},
-          onRemove: () {},
-        ),
-        CartItemWidget(
-          imagepath: Assets.imgOnboardin1, // أو 'assets/images/product.png'
-          title: 'Bedroom Dresser',
-          price: 85,
-          quantity: 2,
-          onAdd: () {},
-          onRemove: () {},
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.all(8),
+            itemCount: 10, // Replace with actual cart item count
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: CartItemWidget(
+                  imagepath:
+                      Assets.imgOnboardin1, // أو 'assets/images/product.png'
+                  title: 'Bedroom Dresser',
+                  price: 85,
+                  quantity: 2,
+                  onAdd: () {},
+                  onRemove: () {},
+                ),
+              );
+            },
+          ),
         ),
         SizedBox(height: 20),
-          Divider(
-            color: AppTheme.primaryColor,
-            thickness: 1,
-          ),
-          SizedBox(height: 10),
-          CustomPriceWidget(
-            title: 'SubTotal',
-            price: 980.00,
-          ),
-          CustomPriceWidget(
-            title: 'Tax and Fees',
-            price: 5.00,
-          ),
-          CustomPriceWidget(
-            title: 'Delivery',
-            price: 00.0,
-          ),
-          SizedBox(height: 10),
-          DashedDivider(height: 1, color: AppTheme.primaryColor),
-          SizedBox(height: 10),
-          CustomPriceWidget(
-            title: 'Total',
-            price: 985.00,
-            titleFontSize: 25,
-            priceFontSize: 20,
-          ),
-          SizedBox(height: 20),
-          CustomButton(text: 'Checkout', onPressed: () {
-            Navigator.pushNamed(context, CheckoutView.routeName);
-          }),
+        Divider(
+          color: AppTheme.primaryColor,
+          thickness: 1,
+        ),
+        SizedBox(height: 10),
+        CustomPriceWidget(
+          title: 'SubTotal',
+          price: 980.00,
+        ),
+        CustomPriceWidget(
+          title: 'Tax and Fees',
+          price: 5.00,
+        ),
+        CustomPriceWidget(
+          title: 'Delivery',
+          price: 00.0,
+        ),
+        SizedBox(height: 10),
+        DashedDivider(height: 1, color: AppTheme.primaryColor),
+        SizedBox(height: 10),
+        CustomPriceWidget(
+          title: 'Total',
+          price: 985.00,
+          titleFontSize: 25,
+          priceFontSize: 20,
+        ),
+        SizedBox(height: 20),
+        CustomButton(
+            text: 'Checkout',
+            onPressed: () {
+              Navigator.pushNamed(context, CheckoutView.routeName);
+            }),
       ],
     );
   }

@@ -1,0 +1,21 @@
+class OrderItemEntity {
+  final String status;
+  final String title;
+  final String description;
+  final String imageUrl;
+  final double price;
+  final int quantity;
+  final DateTime date;
+
+  const OrderItemEntity({
+    required this.status,
+    required this.title,
+    required this.description,
+    required this.imageUrl,
+    required this.price,
+    required this.quantity,
+    required this.date,
+  });
+
+  double get total => price * quantity;
+}

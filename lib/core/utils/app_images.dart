@@ -98,6 +98,10 @@ class Assets {
   /// assets/img/panner.png
   static const String imgPanner = "assets/img/panner.png";
 
+  /// Assets for imgPic
+  /// assets/img/pic.jpg
+  static const String imgPic = "assets/img/pic.jpg";
+
   /// Assets for imgProfile
   /// assets/img/Profile.svg
   static const String imgProfile = "assets/img/Profile.svg";

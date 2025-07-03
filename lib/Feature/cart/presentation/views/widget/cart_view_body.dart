@@ -16,13 +16,11 @@ class CartViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isCartEmpty =
         false; // This should be replaced with actual logic to check if the cart is empty
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          CustomAppBar(title: 'My Cart'),
-          isCartEmpty ? const EmptyCartView() : FullCartView(),
-        ],
-      ),
+    return Column(
+      children: [
+        CustomAppBar(title: 'My Cart'),
+        isCartEmpty ? const EmptyCartView() : Expanded(child: FullCartView()),
+      ],
     );
   }
 }

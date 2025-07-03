@@ -8,28 +8,19 @@ class FullWishlistView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = List.generate(
-      10, // استبدل الرقم ده بعدد العناصر الحقيقية
-      (_) => {
-        'title': 'Serenity Nightstand',
-        'price': 150.0,
-        'image': Assets.imgOnboardin1,
-      },
-    );
-
     return Column(
       children: [
         Expanded(
           child: ListView.builder(
             padding: const EdgeInsets.all(8),
-            itemCount: items.length,
+            itemCount: 10,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: CartItemTile(
                   imagePath: Assets.imgOnboardin1,
                   title: "Title",
-                  price: 150 ,
+                  price: 150,
                   onDelete: () {
                     // حذف العنصر من الليست
                   },

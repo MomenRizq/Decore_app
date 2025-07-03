@@ -1,3 +1,4 @@
+import 'package:decore_app/Feature/Profile/presentation/view/profile_view.dart';
 import 'package:decore_app/Feature/cart/presentation/views/cart_view.dart';
 import 'package:decore_app/Feature/categories/presentation/view/categories_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/home_view.dart';
@@ -22,7 +23,7 @@ class MainViewBody extends StatelessWidget {
         CategoriesView(),
         CartView(),
         WishlistView(),
-        HomeView(),
+        ProfileView(),
         
       ],
     );

@@ -1,4 +1,5 @@
 import 'package:decore_app/Feature/Profile/presentation/view/profile_view.dart';
+import 'package:decore_app/Feature/Profile/presentation/view/widget/edit_profile_view.dart';
 import 'package:decore_app/Feature/Splash/presntation/view/welcome_view.dart';
 import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
 import 'package:decore_app/Feature/auth/view/signin_view.dart';
@@ -14,6 +15,7 @@ import 'package:decore_app/Feature/onboarding/presentation/view/onboarding_view.
 import 'package:decore_app/Feature/item_details/presentation/views/details_of_item_view.dart';
 import 'package:decore_app/Feature/wishlist/presentation/view/wishlist_view.dart';
 import 'package:flutter/material.dart';
+import '../../Feature/Profile/presentation/view/widget/order_view.dart';
 import '../../Feature/Splash/presntation/view/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -50,6 +52,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const WishlistView());
     case ProfileView.routeName:
       return MaterialPageRoute(builder: (_) => const ProfileView());
+    case EditProfileView.routeName:
+      return MaterialPageRoute(builder: (_) => const EditProfileView());
+    case OrderView.routeName:
+      return MaterialPageRoute(builder: (_) => const OrderView());
 
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());
