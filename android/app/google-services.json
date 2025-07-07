@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "237588759546",
+    "project_id": "decor-app-78f5b",
+    "storage_bucket": "decor-app-78f5b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237588759546:android:caecfc1dc2cd03b2f41a43",
+        "android_client_info": {
+          "package_name": "com.example.decore_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237588759546-shjmfke1t33ldcei8ml6m03ic89v5u7t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.decore_app",
+            "certificate_hash": "e7f450e9b49c58e6d95c9af77e278e611f37d423"
+          }
+        },
+        {
+          "client_id": "237588759546-ui2ug0ghkcb9bps1e7hsanbom2or6ut4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkZ-YZMkj2MoF2NTNa2UOJShd8hBIPDWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237588759546-ui2ug0ghkcb9bps1e7hsanbom2or6ut4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

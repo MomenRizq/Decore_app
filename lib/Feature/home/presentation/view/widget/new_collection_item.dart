@@ -1,4 +1,4 @@
-import 'package:decore_app/Feature/auth/view/widget/custom_image.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/widget/custom_image.dart';
 import 'package:decore_app/Feature/item_details/presentation/views/details_of_item_view.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';

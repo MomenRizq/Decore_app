@@ -1,4 +1,4 @@
-import 'package:decore_app/Feature/auth/view/widget/custom_image.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/widget/custom_image.dart';
 import 'package:decore_app/Feature/categories/presentation/view/categories_view.dart';
 import 'package:decore_app/Feature/home/domain/entites/bottom_navigation_bar_entity.dart';
 import 'package:decore_app/Feature/home/presentation/view/home_view.dart';

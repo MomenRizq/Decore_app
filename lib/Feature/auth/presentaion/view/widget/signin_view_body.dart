@@ -1,13 +1,18 @@
-import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
-import 'package:decore_app/Feature/auth/view/widget/have_account_widget.dart';
-import 'package:decore_app/Feature/auth/view/widget/social_login_button.dart';
+import 'package:decore_app/Feature/auth/domain/repos/auth_repo.dart';
+import 'package:decore_app/Feature/auth/presentaion/cubit/signin_cubit/signin_cubit.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/Forgot_passwprd_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/signup_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/widget/have_account_widget.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/widget/social_login_button.dart';
+import 'package:decore_app/core/services/get_it_services.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_text_auth.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import '../../../home/presentation/view/main_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../home/presentation/view/main_view.dart';
 import 'custom_password_field.dart';
 import 'or_divider.dart';
 
@@ -61,10 +66,12 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.06),
                     CustomButton(
                         text: 'Login',
-                        onPressed: () {
+                        onPressed: () async {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();
-                            Navigator.of(context).pushNamed(MainView.routeName);
+                            context
+                                .read<SigninCubit>()
+                                .signInWithEmailAndPassword(email, password);
                           } else {
                             _autovalidateMode = AutovalidateMode.always;
                             setState(() {});
@@ -86,10 +93,16 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SocialLoginButton(
-                            image: Assets.imgFacebookIcon, onPressed: () {}),
+                            image: Assets.imgFacebookIcon,
+                            onPressed: () {
+                              context.read<SigninCubit>().signInWithFacebook();
+                            }),
                         SizedBox(width: 8),
                         SocialLoginButton(
-                            image: Assets.imgGoogleIcon, onPressed: () {})
+                            image: Assets.imgGoogleIcon,
+                            onPressed: () {
+                              context.read<SigninCubit>().signInWithGoogle();
+                            })
                       ],
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.03),
@@ -97,7 +110,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                         firstWord: "Don't have an account?",
                         secondWord: "Sign Up",
                         onTap: () {
-                          Navigator.pop(context);
+                          Navigator.pushNamed(context, SignupView.routeName);
                         }),
                   ],
                 )),

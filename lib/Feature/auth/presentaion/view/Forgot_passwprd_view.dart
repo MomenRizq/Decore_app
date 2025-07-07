@@ -1,4 +1,4 @@
-import 'package:decore_app/Feature/auth/view/widget/custom_app_bar_auth.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/widget/custom_app_bar_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/Forgot_password_view_body.dart';

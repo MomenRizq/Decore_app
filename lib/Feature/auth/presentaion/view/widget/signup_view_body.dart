@@ -1,10 +1,15 @@
-import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/cubit/signup_cubit/signup_cubit.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/Forgot_passwprd_view.dart';
 import 'package:decore_app/Feature/home/presentation/view/main_view.dart';
+import 'package:decore_app/core/services/get_it_services.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
+import 'package:decore_app/core/widgets/custom_snackBar.dart';
 import 'package:decore_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../domain/repos/auth_repo.dart';
 import '../signin_view.dart';
 import 'custom_password_field.dart';
 import 'have_account_widget.dart';
@@ -22,7 +27,7 @@ class SignupViewBody extends StatefulWidget {
 class _SignupViewBodyState extends State<SignupViewBody> {
   final formKey = GlobalKey<FormState>();
 
-  late String email, password, fullName, birthDate;
+  late String email, password1, password2, fullName, birthDate;
   late int number;
   AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
@@ -36,7 +41,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Form(
-                key: formKey, 
+                key: formKey,
                 autovalidateMode: _autovalidateMode,
                 child: Column(
                   spacing: MediaQuery.of(context).size.height * 0.02,
@@ -76,23 +81,36 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     PasswordField(
                       title: "Password",
                       onSaved: (value) {
-                        password = value!;
+                        password1 = value!;
                       },
                     ),
                     PasswordField(
                       title: "Confirm Password",
                       onSaved: (value) {
-                        password = value!;
+                        password2 = value!;
                       },
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     TermsAndConditionsWidget(),
                     CustomButton(
                       text: 'Sign Up',
-                      onPressed: () {
+                      onPressed: () async {
                         if (formKey.currentState!.validate()) {
                           formKey.currentState!.save();
-                          Navigator.of(context).pushNamed(MainView.routeName);
+                          if (password1 == password2) {
+                            formKey.currentState!.save();
+                            context
+                                .read<SignupCubit>()
+                                .createUserWithEmailAndPassword(
+                                  email,
+                                  password1,
+                                  fullName,
+                                  number.toString(),
+                                  birthDate,
+                                );
+                          } else {
+                            CustomSnackBar(context, "Passwords do not match");
+                          }
                         } else {
                           _autovalidateMode = AutovalidateMode.always;
                           setState(() {});
@@ -114,10 +132,16 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SocialLoginButton(
-                            image: Assets.imgFacebookIcon, onPressed: () {}),
+                            image: Assets.imgFacebookIcon,
+                            onPressed: () {
+                              context.read<SignupCubit>().signUpWithFacebook();
+                            }),
                         SizedBox(width: 8),
                         SocialLoginButton(
-                            image: Assets.imgGoogleIcon, onPressed: () {})
+                            image: Assets.imgGoogleIcon,
+                            onPressed: () {
+                              context.read<SignupCubit>().signupWithGoogle();
+                            })
                       ],
                     ),
                     HaveAnAccountWidget(

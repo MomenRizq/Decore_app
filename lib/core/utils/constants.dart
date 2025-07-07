@@ -69,4 +69,5 @@ const double topPadding = 60.0;
 const double bottomPadding = 60.0;
 const double leftPadding = 15.0;
 const double rightPadding = 15.0;
+const kUserData = 'userData';
 

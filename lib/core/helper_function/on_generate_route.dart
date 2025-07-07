@@ -1,9 +1,9 @@
 import 'package:decore_app/Feature/Profile/presentation/view/profile_view.dart';
 import 'package:decore_app/Feature/Profile/presentation/view/widget/edit_profile_view.dart';
 import 'package:decore_app/Feature/Splash/presntation/view/welcome_view.dart';
-import 'package:decore_app/Feature/auth/view/Forgot_passwprd_view.dart';
-import 'package:decore_app/Feature/auth/view/signin_view.dart';
-import 'package:decore_app/Feature/auth/view/signup_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/Forgot_passwprd_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/signin_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/signup_view.dart';
 import 'package:decore_app/Feature/cart/presentation/views/cart_view.dart';
 import 'package:decore_app/Feature/cart/presentation/views/widget/checkout_widgets/checkout_view.dart';
 import 'package:decore_app/Feature/cart/presentation/views/widget/state_order_view.dart';

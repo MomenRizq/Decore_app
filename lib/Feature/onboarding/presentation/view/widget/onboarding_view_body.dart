@@ -1,4 +1,5 @@
-import 'package:decore_app/Feature/auth/view/signup_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/signin_view.dart';
+import 'package:decore_app/Feature/auth/presentaion/view/signup_view.dart';
 import 'package:decore_app/Feature/onboarding/presentation/view/widget/onboarding_page_view.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:decore_app/core/widgets/custom_button.dart';
@@ -61,7 +62,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
               CustomButton(
                 text: currentPage == 3 ? 'Get Started' : 'Next',
                 onPressed: () {
-                  currentPage == 3 ? Navigator.of(context).pushReplacementNamed(SignupView.routeName) :
+                  currentPage == 3 ? Navigator.of(context).pushReplacementNamed(SigninView.routeName) :
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
