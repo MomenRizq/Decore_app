@@ -11,6 +11,14 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+.VirtualBox/
+.android/
+*.qcow2
+*.pb
+*.bin
+*.lock
+*.ini
+
 
 # IntelliJ related
 *.iml
