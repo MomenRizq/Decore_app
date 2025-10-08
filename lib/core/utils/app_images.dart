@@ -102,6 +102,86 @@ class Assets {
   /// assets/img/pic.jpg
   static const String imgPic = "assets/img/pic.jpg";
 
+  /// Assets for imgProduct1
+  /// assets/img/product/1.jpg
+  static const String imgProduct1 = "assets/img/product/1.jpg";
+
+  /// Assets for imgProduct10
+  /// assets/img/product/10.jpg
+  static const String imgProduct10 = "assets/img/product/10.jpg";
+
+  /// Assets for imgProduct11
+  /// assets/img/product/11.jpg
+  static const String imgProduct11 = "assets/img/product/11.jpg";
+
+  /// Assets for imgProduct12
+  /// assets/img/product/12.jpg
+  static const String imgProduct12 = "assets/img/product/12.jpg";
+
+  /// Assets for imgProduct13
+  /// assets/img/product/13.jpg
+  static const String imgProduct13 = "assets/img/product/13.jpg";
+
+  /// Assets for imgProduct14
+  /// assets/img/product/14.jpg
+  static const String imgProduct14 = "assets/img/product/14.jpg";
+
+  /// Assets for imgProduct15
+  /// assets/img/product/15.jpg
+  static const String imgProduct15 = "assets/img/product/15.jpg";
+
+  /// Assets for imgProduct16
+  /// assets/img/product/16.jpg
+  static const String imgProduct16 = "assets/img/product/16.jpg";
+
+  /// Assets for imgProduct17
+  /// assets/img/product/17.jpg
+  static const String imgProduct17 = "assets/img/product/17.jpg";
+
+  /// Assets for imgProduct18
+  /// assets/img/product/18.jpg
+  static const String imgProduct18 = "assets/img/product/18.jpg";
+
+  /// Assets for imgProduct19
+  /// assets/img/product/19.jpg
+  static const String imgProduct19 = "assets/img/product/19.jpg";
+
+  /// Assets for imgProduct2
+  /// assets/img/product/2.jpg
+  static const String imgProduct2 = "assets/img/product/2.jpg";
+
+  /// Assets for imgProduct20
+  /// assets/img/product/20.jpg
+  static const String imgProduct20 = "assets/img/product/20.jpg";
+
+  /// Assets for imgProduct3
+  /// assets/img/product/3.jpg
+  static const String imgProduct3 = "assets/img/product/3.jpg";
+
+  /// Assets for imgProduct4
+  /// assets/img/product/4.jpg
+  static const String imgProduct4 = "assets/img/product/4.jpg";
+
+  /// Assets for imgProduct5
+  /// assets/img/product/5.jpg
+  static const String imgProduct5 = "assets/img/product/5.jpg";
+
+  /// Assets for imgProduct6
+  /// assets/img/product/6.jpg
+  static const String imgProduct6 = "assets/img/product/6.jpg";
+
+  /// Assets for imgProduct7
+  /// assets/img/product/7.jpg
+  static const String imgProduct7 = "assets/img/product/7.jpg";
+
+  /// Assets for imgProduct8
+  /// assets/img/product/8.jpg
+  static const String imgProduct8 = "assets/img/product/8.jpg";
+
+  /// Assets for imgProduct9
+  /// assets/img/product/9.jpg
+  static const String imgProduct9 = "assets/img/product/9.jpg";
+
   /// Assets for imgProfile
   /// assets/img/Profile.svg
   static const String imgProfile = "assets/img/Profile.svg";

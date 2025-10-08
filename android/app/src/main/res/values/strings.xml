@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<string name="app_name">Decor app</string>   
-<string name="facebook_app_id">1108860631296671</string>
-<string name="fb_login_protocol_scheme">fb1234</string>
-<string name="facebook_client_token">50411f313771cd792bd9f7228824872a</string>
-
+    <string name="app_name">Decor app</string>   
+    <string name="facebook_app_id">1899120954151908</string>
+    <string name="fb_login_protocol_scheme">fb1899120954151908</string>
+    <string name="facebook_client_token">1e36b9e3f2560f76aeb07fe245018273</string>
 
 </resources>

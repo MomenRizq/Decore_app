@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       onGenerateRoute: onGenerateRoute,
       initialRoute: //MainView.routeName
-          SplashView.routeName, // Changed to SplashView
+          SplashView.routeName,
+      // Changed to SplashView
     );
   }
 }

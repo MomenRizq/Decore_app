@@ -1,4 +1,5 @@
 import 'package:decore_app/Feature/auth/presentaion/view/widget/custom_image.dart';
+import 'package:decore_app/Feature/item_details/domain/entities/product.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
@@ -8,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'custom_users_review_header.dart';
 
 class DetailsOfItem extends StatelessWidget {
-  const DetailsOfItem({super.key});
+  const DetailsOfItem({super.key, required this.product});
+  final ProductEntity product;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class DetailsOfItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                Assets.imgOnboardin1,
+                product.image,
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -35,13 +37,13 @@ class DetailsOfItem extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         Text(
-          'Kitchen Cart',
+          product.title,
           style: TextStyles.poppinsSemiBold
               .copyWith(color: Colors.black, fontSize: 25),
         ),
         const SizedBox(height: 10),
         Text(
-          'Lorem ipsum dolor sit amet consectetur. Odio neque commodo id aenean quis magna. Auctor neque id pharetra gravida. Libero scelerisque ut mauris volutpat risus nec facilisi adipiscing. Augue mollis amet.',
+          product.description,
           textAlign: TextAlign.start,
           softWrap: true,
           style: TextStyles.spartanLight.copyWith(
@@ -55,9 +57,12 @@ class DetailsOfItem extends StatelessWidget {
           thickness: 2,
         ),
         const SizedBox(height: 5),
-        ProductActionButton(),
-        CustomUserReviewsHeader(),
-
+        ProductActionButton(
+          product: product,
+        ),
+        CustomUserReviewsHeader(
+          filledStars: product.rating,
+        ),
       ],
     );
   }

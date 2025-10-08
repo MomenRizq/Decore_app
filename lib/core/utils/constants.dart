@@ -2,18 +2,18 @@ import 'package:decore_app/Feature/Profile/domain/entities/order_item_entity';
 
 class CategoriesConstants {
   static const List<String> categories = [
-    "Decorative Light",
+    "Dining Table",
     "Sofa",
-    "Beds",
+    "Bed",
     "Tables",
     "Chairs",
-    "Cupboard",
+    "Kitchen",
     "Decor",
     "Other",
   ];
 }
 
-class OrdersItemForTest{
+class OrdersItemForTest {
   static List<OrderItemEntity> orders = [
     OrderItemEntity(
       status: 'Delivered',
@@ -51,7 +51,7 @@ class OrdersItemForTest{
       quantity: 1,
       date: DateTime(2025, 6, 28),
     ),
-        OrderItemEntity(
+    OrderItemEntity(
       status: 'Delivered',
       title: 'Serenity Nightstand',
       description: 'Modern wooden nightstand with drawers and decor items.',
@@ -64,10 +64,8 @@ class OrdersItemForTest{
   ];
 }
 
-
 const double topPadding = 60.0;
 const double bottomPadding = 60.0;
 const double leftPadding = 15.0;
 const double rightPadding = 15.0;
 const kUserData = 'userData';
-

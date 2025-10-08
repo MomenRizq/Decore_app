@@ -1,4 +1,5 @@
 import 'package:decore_app/Feature/auth/presentaion/view/widget/custom_image.dart';
+import 'package:decore_app/Feature/item_details/domain/entities/product.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
@@ -6,20 +7,21 @@ import 'package:decore_app/Feature/item_details/presentation/views/details_of_it
 import 'package:flutter/material.dart';
 
 class CategoriesDetailesItem extends StatelessWidget {
-  const CategoriesDetailesItem({super.key});
+  const CategoriesDetailesItem({super.key, required this.product});
+  final ProductEntity product;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, DetailsOfItemview.routeName);
+        Navigator.pushNamed(context, DetailsOfItemview.routeName,
+            arguments: product);
       },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: AppTheme.secondaryColor,
         ),
-        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,7 +34,7 @@ class CategoriesDetailesItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    Assets.imgOnboardin1,
+                    product.image,
                     fit: BoxFit.cover,
                     width: double.infinity,
                     height: double.infinity,
@@ -42,13 +44,13 @@ class CategoriesDetailesItem extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              'Kitchen Cart',
+              product.title,
               style: TextStyles.poppinsSemiBold
                   .copyWith(color: Colors.black54, fontSize: 15),
             ),
             Expanded(
               child: Text(
-                'Best for your kitchen and dining room space to make a statement in your home.',
+                product.description,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.start,
@@ -72,7 +74,7 @@ class CategoriesDetailesItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "\$${120.00}",
+                    "${product.price}",
                     style: TextStyles.poppinsSemiBold.copyWith(
                       color: AppTheme.primaryColor,
                     ),

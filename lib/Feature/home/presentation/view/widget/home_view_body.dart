@@ -5,12 +5,16 @@ import 'package:decore_app/Feature/home/presentation/view/widget/best_seller_wid
 import 'package:decore_app/Feature/home/presentation/view/widget/category_icon_widget.dart';
 import 'package:decore_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../item_details/presentation/cubit/product_cubit.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    context.read<ProductCubit>().fetchProducts();
     return SingleChildScrollView(
       child: Column(
         spacing: MediaQuery.of(context).size.height * 0.03,
@@ -24,7 +28,6 @@ class HomeViewBody extends StatelessWidget {
             ],
             height: MediaQuery.of(context).size.height * 0.2,
           ),
-      
           CategoryIconWidget(
             CategoryIcon: [
               Assets.imgBedicon,
@@ -34,10 +37,8 @@ class HomeViewBody extends StatelessWidget {
               Assets.imgSofaicon
             ],
           ),
-      
           BestSellerWidget(),
           NewCollectionWidget()
-    
         ],
       ),
     );

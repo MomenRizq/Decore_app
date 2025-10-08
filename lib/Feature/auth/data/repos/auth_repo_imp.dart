@@ -135,7 +135,6 @@ class AuthRepoImpl extends AuthRepo {
       } else {
         await addUserData(userEntity: userEntity);
       }
-
       return right(userEntity);
     } catch (e) {
       await deleteUser(user);

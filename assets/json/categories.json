@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bed",
+      "image": "assets/img/bedicon.svg"
+    },
+    {
+      "id": 2,
+      "name": "Chair",
+      "image": "assets/img/chairicon.svg"
+    },
+    {
+      "id": 3,
+      "name": "Dining Table",
+      "image": "assets/img/Diningtableicon.svg"
+    },
+    {
+      "id": 4,
+      "name": "Kitchen",
+      "image": "assets/img/Kitchenicon.svg"
+    },
+    {
+      "id": 5,
+      "name": "Sofa",
+      "image": "assets/img/Sofaicon.svg"
+    }
+  ]
+}
