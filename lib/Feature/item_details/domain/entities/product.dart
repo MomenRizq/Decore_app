@@ -8,9 +8,9 @@ class ProductEntity {
   final int ratingCount;
   final String category;
   final int stock;
-  final bool isFavorite;
+  bool isFavorite;
 
-  const ProductEntity({
+  ProductEntity({
     required this.id,
     required this.title,
     required this.description,
@@ -20,6 +20,6 @@ class ProductEntity {
     required this.ratingCount,
     required this.category,
     required this.stock,
-    required this.isFavorite,
+    this.isFavorite = false,
   });
 }

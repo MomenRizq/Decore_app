@@ -23,12 +23,10 @@ class ProductCubit extends Cubit<ProductState> {
     try {
       final allProducts = await getProductsUseCase();
 
-      // 2️⃣ فلترة المنتجات حسب الكاتيجوري
       final filteredProducts = allProducts
           .where((p) => p.category.toLowerCase() == category.toLowerCase())
           .toList();
 
-      // 3️⃣ إرسال الحالة الجديدة
       emit(ProductLoaded(filteredProducts));
     } catch (e) {
       emit(ProductError(e.toString()));

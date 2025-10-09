@@ -1,3 +1,4 @@
+import 'package:decore_app/Feature/cart/domain/entities/cart_item.dart';
 import 'package:decore_app/Feature/cart/presentation/views/widget/checkout_widgets/delivary_time.dart';
 import 'package:decore_app/Feature/cart/presentation/views/widget/checkout_widgets/order_summary.dart';
 import 'package:decore_app/Feature/cart/presentation/views/widget/checkout_widgets/payment_method_selector.dart';
@@ -10,7 +11,8 @@ import 'package:decore_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutViewBody extends StatelessWidget {
-  const CheckoutViewBody({super.key});
+  const CheckoutViewBody({super.key, required this.items});
+  final List<CartItem> items;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class CheckoutViewBody extends StatelessWidget {
             SizedBox(height: 20),
             SectionTitle(title: 'Order Summary'),
             SizedBox(height: 5),
-            OrderSummary(),
+            OrderSummary(items: items),
             SizedBox(height: 20),
             SectionTitle(title: 'Payment Method'),
             PaymentMethodSelector(),
@@ -48,9 +50,12 @@ class CheckoutViewBody extends StatelessWidget {
             SizedBox(height: 5),
             DeliveryTime(),
             SizedBox(height: 30),
-            Center(child: CustomButton(text: "Pay Now", onPressed: (){
-              Navigator.pushNamed(context, StateOrderView.routeName); 
-            }))
+            Center(
+                child: CustomButton(
+                    text: "Pay Now",
+                    onPressed: () {
+                      Navigator.pushNamed(context, StateOrderView.routeName);
+                    }))
           ],
         ),
       ),

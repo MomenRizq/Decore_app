@@ -2,7 +2,6 @@ import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class CustomImageView extends StatelessWidget {
   CustomImageView(
       {this.imagePath,
@@ -15,11 +14,10 @@ class CustomImageView extends StatelessWidget {
       this.radius,
       this.margin,
       this.border,
-      this.placeHolder}) : super();
+      this.placeHolder})
+      : super();
 
   late String? imagePath;
-
-
 
   final double? height;
 
@@ -86,19 +84,15 @@ class CustomImageView extends StatelessWidget {
   }
 
   Widget _buildImageView() {
-     return SizedBox(
-          height: height,
-          width: width,
-          child: SvgPicture.asset(
-            imagePath!,
-            height: height,
-            width: width,
-            fit: fit ?? BoxFit.contain,
-            colorFilter: color != null
-                ? ColorFilter.mode(
-                    color ?? AppTheme.primaryColor, BlendMode.srcIn)
-                : null,
-          ),
-        );
+    return SizedBox(
+      height: height,
+      width: width,
+      child: SvgPicture.asset(
+        imagePath!,
+        height: height,
+        width: width,
+        fit: fit ?? BoxFit.contain,
+      ),
+    );
   }
 }

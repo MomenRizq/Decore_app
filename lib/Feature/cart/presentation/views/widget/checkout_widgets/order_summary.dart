@@ -1,10 +1,15 @@
+import 'package:decore_app/Feature/cart/domain/entities/cart_item.dart';
 import 'package:decore_app/Feature/cart/presentation/views/widget/checkout_widgets/order_item.dart';
 import 'package:decore_app/core/utils/app_text_style.dart';
 import 'package:decore_app/core/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class OrderSummary extends StatelessWidget {
-  const OrderSummary({super.key});
+  const OrderSummary({super.key, required this.items});
+  final List<CartItem> items;
+
+  double get totalPrice =>
+      items.fold(0, (sum, item) => sum + (item.price * item.quantity) + 5);
 
   @override
   Widget build(BuildContext context) {
@@ -13,29 +18,31 @@ class OrderSummary extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: IntrinsicHeight( 
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch, 
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  OrderItem(name: 'Dining Table Set', count: 1),
-                  OrderItem(name: 'Bedroom Dhhhtttttttttttttttttttttresser', count: 2),
-                  OrderItem(name: 'Adjustable Lamp', count: 3),
-                ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // هنا استخدمنا الـ spread operator بدل ListView
+            ...items.map(
+              (item) => OrderItem(
+                name: item.title,
+                count: item.quantity,
               ),
-              Center( 
-                child: Text(
-                  '\$985.00',
-                  style: TextStyles.poppinsBold.copyWith(
-                    color: AppTheme.primaryColor,
-                  ),
+            ),
+
+            const Divider(thickness: 1),
+            const SizedBox(height: 10),
+
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                'Total: \$${totalPrice.toStringAsFixed(2)}',
+                style: TextStyles.poppinsBold.copyWith(
+                  color: AppTheme.primaryColor,
+                  fontSize: 18,
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -49,7 +49,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case CartView.routeName:
       return MaterialPageRoute(builder: (_) => const CartView());
     case CheckoutView.routeName:
-      return MaterialPageRoute(builder: (_) => const CheckoutView());
+      return MaterialPageRoute(
+        builder: (_) => const CheckoutView(),
+        settings: settings,
+      );
     case StateOrderView.routeName:
       return MaterialPageRoute(builder: (_) => const StateOrderView());
     case TrackView.routeName:

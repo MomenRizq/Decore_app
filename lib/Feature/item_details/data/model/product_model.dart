@@ -1,7 +1,7 @@
 import '../../domain/entities/product.dart';
 
 class ProductModel extends ProductEntity {
-  const ProductModel({
+  ProductModel({
     required super.id,
     required super.title,
     required super.description,
@@ -11,7 +11,7 @@ class ProductModel extends ProductEntity {
     required super.ratingCount,
     required super.category,
     required super.stock,
-    required super.isFavorite,
+    super.isFavorite = false,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {

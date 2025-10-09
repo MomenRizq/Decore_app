@@ -1,3 +1,5 @@
+import 'package:decore_app/Feature/cart/data/repos/cart_repo_imp.dart';
+import 'package:decore_app/Feature/cart/presentation/cubit/cart_cubit.dart';
 import 'package:decore_app/Feature/home/presentation/view/widget/appbar_home_widget.dart';
 import 'package:decore_app/Feature/home/presentation/view/widget/home_view_body.dart';
 import 'package:decore_app/Feature/home/presentation/view/widget/custom_nav_bottom_bar/custom_bottom_nav_bar.dart';
@@ -24,34 +26,20 @@ class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => ProductCubit(
-            GetProducts(
-              ProductRepositoryImpl(
-                localDataSource: ProductLocalDataSourceImpl(),
-              ),
-            ),
-          ),
+    return Scaffold(
+      extendBody: true,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+            horizontal: leftPadding, vertical: topPadding),
+        child: MainViewBody(
+          currentViewIndex: currentViewIndex,
         ),
-        // BlocProvider(create: (_) => sl<FavoriteCubit>()),
-      ],
-      child: Scaffold(
-        extendBody: true,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: leftPadding, vertical: topPadding),
-          child: MainViewBody(
-            currentViewIndex: currentViewIndex,
-          ),
-        ),
-        bottomNavigationBar: CustomBottomNavBar(
-          onItemTapped: (index) {
-            currentViewIndex = index;
-            setState(() {});
-          },
-        ),
+      ),
+      bottomNavigationBar: CustomBottomNavBar(
+        onItemTapped: (index) {
+          currentViewIndex = index;
+          setState(() {});
+        },
       ),
     );
   }

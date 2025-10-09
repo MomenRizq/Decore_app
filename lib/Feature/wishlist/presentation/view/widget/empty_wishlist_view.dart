@@ -8,22 +8,20 @@ class EmptyWishlistView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(Assets.imgWishlist, height: 200, width: 200),
-            const SizedBox(height: 20),
-            SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: const Text(
-                  "Your wishlist is empty",
-                  style: TextStyles.poppinsSemiBold,
-                  textAlign: TextAlign.center,
-                )),
-          ],
-        ),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(Assets.imgWishlist, height: 200, width: 200),
+          const SizedBox(height: 20),
+          SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: const Text(
+                "Your wishlist is empty",
+                style: TextStyles.poppinsSemiBold,
+                textAlign: TextAlign.center,
+              )),
+        ],
       ),
     );
   }
