@@ -16,18 +16,21 @@ class ProfileViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          CustomAppBarProfile(title: 'Profile' , editIcon: true,),
+          CustomAppBarProfile(
+            title: 'Profile',
+            editIcon: true,
+          ),
           const SizedBox(height: 20),
           // Profile Image
           const CircleAvatar(
             radius: 50,
-            backgroundImage: AssetImage(
-                Assets.imgOnboardin4), // Replace with your asset
+            backgroundImage:
+                AssetImage(Assets.imgProfileme), // Replace with your asset
           ),
           const SizedBox(height: 10),
           // Name & ID
           const Text(
-            'Madison Smith',
+            'Momen Rizq',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const Text(
@@ -38,10 +41,11 @@ class ProfileViewBody extends StatelessWidget {
           // Menu List
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column( 
+            child: Column(
               children: [
                 MenuItem(
-                    icon: Icons.local_offer_outlined, label: 'My Orders' ,
+                    icon: Icons.local_offer_outlined,
+                    label: 'My Orders',
                     onTap: () {
                       Navigator.pushNamed(context, OrderView.routeName);
                     }),

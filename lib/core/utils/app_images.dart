@@ -186,6 +186,10 @@ class Assets {
   /// assets/img/Profile.svg
   static const String imgProfile = "assets/img/Profile.svg";
 
+  /// Assets for imgProfileme
+  /// assets/img/profileme.png
+  static const String imgProfileme = "assets/img/profileme.png";
+
   /// Assets for imgSearchIcon
   /// assets/img/search_icon.svg
   static const String imgSearchIcon = "assets/img/search_icon.svg";
